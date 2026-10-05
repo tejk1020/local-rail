@@ -1,0 +1,56 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "smart-local-train",
+          "appId": "1:58307756783:android:47e7296afc25e90cd8d11a",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "smart-local-train",
+          "configurations": {
+            "android": "1:58307756783:android:47e7296afc25e90cd8d11a",
+            "ios": "1:58307756783:ios:e9519dc12cdade82d8d11a",
+            "macos": "1:58307756783:ios:e9519dc12cdade82d8d11a",
+            "web": "1:58307756783:web:a39a7a4814331c3bd8d11a",
+            "windows": "1:58307756783:web:6625408239c8394bd8d11a"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ],
+  "emulators": {
+    "auth": {
+      "host": "0.0.0.0",
+      "port": 9099
+    },
+    "firestore": {
+      "host": "0.0.0.0",
+      "port": 8080
+    },
+    "functions": {
+      "host": "0.0.0.0",
+      "port": 5001
+    }
+  }
+}

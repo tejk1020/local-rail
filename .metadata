@@ -1,0 +1,762 @@
+# This file tracks properties of this Flutter project.
+# Used by Flutter tool to assess capabilities and perform upgrades etc.
+#
+# This file should be version controlled and should not be manually edited.
+
+version:
+  revision: "d3b14c876900e553bc736ca19295fc09e3853e8e"
+  channel: "stable"
+
+project_type: app
+
+# Tracks metadata for the flutter migrate command
+migration:
+  platforms:
+    - platform: root
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: android
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: ios
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: linux
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: macos
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: web
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+    - platform: windows
+      create_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+      base_revision: d3b14c876900e553bc736ca19295fc09e3853e8e
+
+  # User provided section
+
+  # List of Local paths (relative to this file) that should be
+  # ignored by the migrate tool.
+  #
+  # Files that are not part of the templates will be ignored by default.
+  unmanaged_files:
+    - 'lib/main.dart'
+    - 'ios/Runner.xcodeproj/project.pbxproj'
+
+
+1. Hello World
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Hello World',
+      theme: ThemeData(
+        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const MyHomePage(title: 'Hello World'),
+    );
+  }
+}
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<MyHomePage> {
+  void incrementCounter() {
+    setState(() {
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+                'Hello World',
+            ),
+          ],
+        ),
+      ),
+      );
+  }
+}
+2.Write a Dart program demonstrating variables and functions.
+int addNumbers(int a,int b){
+  return a+b;
+}
+void displayStudent(String name, int age){
+  print("Student name: $name");
+  print("Age: $age");
+}
+void main(){
+  String StudentName="Alice";
+  int StudentAge=21;
+  double marks=89.5;
+  bool isPassed=true;
+
+  List<String> subjects=["Flutter","INS","AI"];
+  Map<String , String> student={
+    "Name":"Alice",
+    "City":"New York"
+  };
+  Runes heart=Runes('\u2665');
+
+  print("Name: $StudentName");
+  print("Age: $StudentAge");
+  print("Marks: $marks");
+  print("Passed: $isPassed");
+  print("\nSubjects: $subjects");
+  print("Student Map: $student");
+  print("Rune Symbol: ${String.fromCharCodes(heart)}");
+
+  displayStudent(StudentName,StudentAge);
+
+  int result=addNumbers(10, 20);
+  print("Sum of Numbers: $result");
+}
+
+3. Design a simple UI using Text, Image, and Icon widgets.
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
+    );
+  }
+}
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Simple UI"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Image Widget
+              Image.asset(
+                'asset/image.jpg',
+                height: 150,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(height: 20),
+              // Text Widget
+              const Text(
+                'Welcome to Flutter',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Build beautiful apps with ease.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Icon Widgets
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 35,
+                  ),
+                  SizedBox(width: 20),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 35,
+                  ),
+                  SizedBox(width: 20),
+                  Icon(
+                    Icons.share,
+                    color: Colors.blue,
+                    size: 35,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+Pubspec.yml
+name: practical3
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ^3.5.4
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - asset/image.jpg
+
+4.Create layout using Row and Column.
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Row and Column Example',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Row & Column Layout'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Flutter Layout Example',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 80,
+                    height: 80,
+                    color: Colors.red,
+                    child: const Center(
+                      child: Text(
+                        'A',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 80,
+                    height: 80,
+                    color: Colors.green,
+                    child: const Center(
+                      child: Text(
+                        'B',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 80,
+                    height: 80,
+                    color: Colors.orange,
+                    child: const Center(
+                      child: Text(
+                        'C',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 30),
+
+              Container(
+                padding: const EdgeInsets.all(10),
+                color: Colors.grey.shade300,
+                child: const Column(
+                  children: [
+                    Text(
+                      'Column Item 1',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Column Item 2',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Column Item 3',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+5.Design a login form with validation.
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Login Form',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const LoginPage(),
+    );
+  }
+}
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login Form"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.lock,
+                size: 80,
+                color: Colors.blue,
+              ),
+
+              const SizedBox(height: 20),
+
+              TextFormField(
+                controller: emailController,
+                decoration: const InputDecoration(
+                  labelText: "Email",
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.email),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please enter email";
+                  }
+
+                  if (!RegExp(
+                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                  ).hasMatch(value)) {
+                    return "Enter a valid email";
+                  }
+
+                  return null;
+                },
+              ),
+
+              const SizedBox(height: 20),
+
+              TextFormField(
+                controller: passwordController,
+                obscureText: true,
+                decoration: const InputDecoration(
+                  labelText: "Password",
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please enter password";
+                  }
+
+                  if (value.length < 6) {
+                    return "Password must be at least 6 characters";
+                  }
+
+                  return null;
+                },
+              ),
+
+              const SizedBox(height: 25),
+
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text("Login Successful"),
+                      ),
+                    );
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(double.infinity, 50),
+                ),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+6. Implement navigation between two screens.
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Navigation Demo',
+      home: const FirstScreen(),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Screen'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Go to Second Screen'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SecondScreen(),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Back to First Screen'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+7 A. List View
+import 'package:flutter/material.dart';
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Dynamic ListView Ex.',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const DynamicListView(),
+    );
+  }
+}
+class DynamicListView extends StatelessWidget{
+  const DynamicListView({super.key});
+
+  final List<String> students=const[
+    'Messi',
+    'Ronaldo',
+  ];
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Dynamic ListView'),
+      ),
+      body:ListView.builder(
+          itemCount: students.length,itemBuilder: (context,index){
+            return Card(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
+              child: ListTile(
+                leading: CircleAvatar(
+                  child: Text('${index+1}'),
+                ),
+                title: Text(students[index]),
+                subtitle: Text('Student ${index+1}'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+              ),
+            );
+      },
+    ),
+    );
+  }
+}
+
+7 B. Grid  View
+import 'package:flutter/material.dart';
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Dynamic ListView Ex.',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const ImageGallery(),
+    );
+  }
+}
+
+class ImageGallery extends StatelessWidget{
+  const ImageGallery({super.key});
+
+  final List<String> imageUrls=const[
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSgLE2xpkwonYrag9UO0aidjcMjpPidzkW41NnMjOXMA&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0XFaBZSVDGfeQb2TmiJR1if4VkZLV8oyKRWmZuQqIvg&s',
+  ];
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Image Gallery'),
+        centerTitle: true,
+      ),
+      body:Padding
+        (padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          itemCount:imageUrls.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing:10,
+            mainAxisSpacing:10,
+          ),
+          itemBuilder: (context,index){
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius:BorderRadius.circular(12),
+                image: DecorationImage(
+                  image: NetworkImage(imageUrls[index]),
+                  fit:BoxFit.cover,
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+8. Counter app using stateful widget
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const CounterApp());
+}
+class CounterApp extends StatelessWidget {
+  const CounterApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Counter App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const CounterPage(),
+    );
+  }
+}
+
+class CounterPage extends StatefulWidget{
+  const CounterPage({super.key});
+
+  @override
+  State<CounterPage> createState() => _CounterPageState();
+}
+class _CounterPageState extends State<CounterPage>{
+  int counter=0;
+  void incrementCounter(){
+    setState(() {
+      counter++;
+    });
+  }
+  void decrementCounter(){
+    setState(() {
+      counter--;
+    });
+  }
+  void resetCounter(){
+    setState(() {
+      counter=0;
+    });
+  }
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Stateful Counter App'),
+        centerTitle: true,
+      ),
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Counter Value',
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              '$counter',
+              style:const TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height:30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:[
+                ElevatedButton(
+                  onPressed: decrementCounter,
+                  child: const Text('-'),
+                ),
+                const SizedBox(width:15),
+                ElevatedButton(
+                  onPressed: resetCounter,
+                  child: const Text('Reset'),
+                ),
+                const SizedBox(width:15),
+                ElevatedButton(
+                  onPressed: incrementCounter,
+                  child: const Text('+'),
+                ),
+              ]
+            )
+          ],
+        )
+      )
+    );
+  }
+}
+
+
+
+
